@@ -2,11 +2,11 @@ import Image from './Image'
 import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+  <div className="col-span-1">
     <div
-      className={`${
-        imgSrc && 'h-full'
-      }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
+      className={`
+                ${imgSrc && 'h-full'}  
+                overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
     >
       {imgSrc &&
         (href ? (
@@ -14,8 +14,8 @@ const Card = ({ title, description, imgSrc, href }) => (
             <Image
               alt={title}
               src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
+              className="w-full object-cover object-center md:h-36 lg:h-48"
+              width={600}
               height={306}
             />
           </Link>

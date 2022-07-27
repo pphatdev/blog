@@ -1,12 +1,12 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
+name: LEAT Sophat
+avatar: /static/images/profiles.jpg
 occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+company: NINTREA
+email: info.sophat@gmail.com
+twitter: https://twitter.com/infoSophat
+linkedin: https://www.linkedin.com/in/sophat-leat-58b7701a5/
+github: https://github.com/pphatDev
 ---
 
 Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
