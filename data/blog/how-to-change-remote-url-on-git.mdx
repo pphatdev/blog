@@ -1,0 +1,53 @@
+---
+title: 'How to change the URL for a remote HTTPS Git repository'
+date: 2022-10-12
+lastmod: '2022-10-12'
+tags: ['Admin','Git']
+draft: false
+summary: 'How to change the URI (URL) for a remote HTTPS Git repository'
+# layout: PostSimple
+# bibliography: references-data.bib
+# canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/new-features-in-v1/
+---
+
+![](https://telegra.ph/file/b5aa25ae0f96dffc32864.png)
+
+<b>Overview:</b>
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={(2, 3)}/>
+
+This is How to change the URI (URL) for a remote HTTPS Git repository.
+
+
+## 1. Check current remote url 
+
+```js
+git remote -v
+```
+after execute the result
+
+```
+origin  https://github.com/path/repository.git (fetch)
+origin  https://github.com/path/repository.git (push)
+```
+## 2. Change the 'origin' remote's URL 
+
+```js
+// git remote set-url origin new.git.url/here
+git remote set-url origin https://username@github.com/path/newrepository.git
+```
+
+## 3. Check remote again
+```js
+git remote -v
+```
+after execute the result
+
+```
+origin  https://username@github.com/path/newrepository.git (fetch)
+origin  https://username@github.com/path/newrepository.git (push)
+```
+
+
+#### Note**
+See [`git help remote`](https://git-scm.com/docs/git-remote) . You also can edit `.git/config` and change the URLs there.
