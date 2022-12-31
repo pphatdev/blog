@@ -4,9 +4,9 @@ import Link from './Link'
 const Card = ({ title, description, imgSrc, href }) => (
   <div className="col-span-1">
     <div
-      className={`
-                ${imgSrc && 'h-full'}  
-                overflow-hidden transition-all hover:shadow-lg rounded-md rounded-t-xl border border-gray-200 border-opacity-60 dark:border-gray-700`}
+      className={`${
+        imgSrc && 'h-full'
+      } overflow-hidden rounded-md rounded-t-xl border border-gray-200 border-opacity-60 transition-all hover:shadow-lg dark:border-gray-700`}
     >
       {imgSrc &&
         (href ? (
@@ -29,7 +29,7 @@ const Card = ({ title, description, imgSrc, href }) => (
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl font-bold leading-8 line-clamp-2 tracking-tight">
+        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight line-clamp-2">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -38,7 +38,10 @@ const Card = ({ title, description, imgSrc, href }) => (
             title
           )}
         </h2>
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400 line-clamp-3">{description}</p>
+        <p className="prose mb-3 max-w-none text-gray-500 line-clamp-3 dark:text-gray-400">
+          {' '}
+          {description}{' '}
+        </p>
         {href && (
           <Link
             href={href}

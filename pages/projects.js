@@ -12,12 +12,10 @@ export default function Projects() {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Projects
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Reference
-          </p>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">Reference</p>
         </div>
         <div className="relative py-12">
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {projectsData.map((d) => (
               <Card
                 key={d.title}
