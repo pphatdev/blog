@@ -1,16 +1,11 @@
 ---
 name: LEAT Sophat
 avatar: /static/images/profiles.jpg
-occupation: Professor of Atmospheric Science
+occupation: Founder of NINTREA
 company: NINTREA
 email: info.sophat@gmail.com
 twitter: https://twitter.com/infoSophat
-linkedin: https://www.linkedin.com/in/sophat-leat-58b7701a5/
 github: https://github.com/pphatDev
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
-
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+នេះគឺជាគេហទំព័រដែលប្រមូលផ្ដុំទៅដោយឯកសារពហុព័ត៌មាន (អត្ថបទ រូបភាព សំឡេង និងវីដេអូ) សម្រាប់ចែករំលែក និងជាជំនួយដល់ការសិក្សា ព្រមទាំងការបង្រៀន ភាសាខ្មែរ របស់សិស្សានុសិស្ស មាតាបិតាសិស្ស និងលោកគ្រូ អ្នកគ្រូភាសាខ្មែរ។
