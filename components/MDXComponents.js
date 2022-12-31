@@ -4,11 +4,13 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
+import Goodbye2022 from './goodbye2022'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
 
 export const MDXComponents = {
   Image,
+  Goodbye2022,
   TOCInline,
   a: CustomLink,
   pre: Pre,
