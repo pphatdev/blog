@@ -57,9 +57,9 @@ const goodbye2022 = () => {
 
   return (
     <>
-      {dataImg.map((data) => {
+      {dataImg.map((data, key) => {
         return (
-          <>
+          <div key={key}>
             <Image
               loader={laoding}
               src={data.img}
@@ -75,7 +75,7 @@ const goodbye2022 = () => {
             ) : (
               ''
             )}
-          </>
+          </div>
         )
       })}
     </>
