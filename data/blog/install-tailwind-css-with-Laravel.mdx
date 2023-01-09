@@ -1,0 +1,95 @@
+---
+title: 'Install Tailwind CSS with Laravel'
+date: 2023-01-08
+lastmod: '2023-01-08'
+tags: ['Tutorials','Laravel','Tailwindcss']
+draft: false
+summary: 'Setting up Tailwind CSS in a Laravel project.'
+thumbnail: '/static/images/tutorials/Install-Tailwind-CSS-with-Laravel.png'
+type: blog
+---
+
+Setting up Tailwind CSS in a Laravel project.
+
+![](/static/images/tutorials/Install-Tailwind-CSS-with-Laravel.png)
+
+<b>Overview:</b>
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={(1, 2)}/>
+
+## Install Tailwind CSS
+
+Install tailwindcss and its peer dependencies via npm,
+
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+ and create your `tailwind.config.js` file.
+```
+npx tailwindcss init
+```
+
+## Add Tailwind to your Laravel Mix configuration
+
+In your `webpack.mix.js` file, add tailwindcss as a `PostCSS` plugin.
+
+```js
+mix.js("resources/js/app.js", "public/js")
+    .postCss("resources/css/app.css", "public/css", [
+        require("tailwindcss"),
+    ]);
+```
+
+## Configure your template paths
+Add the paths to all of your template files in your `tailwind.config.js` file.
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+}
+```
+
+## Add the Tailwind directives to your CSS
+Add the `@tailwind` directives for each of Tailwind’s layers to your `./resources/css/app.css` file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Start your build process
+Run your build process with `npm run watch`.
+```
+npm run watch
+```
+
+## Start using Tailwind in your project
+Make sure your compiled CSS is included in the `<head>` then start using Tailwind’s utility classes to style your content.
+
+```html
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body class="bg-green-200">
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+</body>
+</html>
+```
+
+Once you have started the Artisan development server, your application will be accessible in your web browser at `http://localhost:8000`.
