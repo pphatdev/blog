@@ -1,0 +1,41 @@
+---
+title: 'How to component on figma'
+date: 2023-01-13
+lastmod: '2023-01-13'
+tags: ['Tutorials','Figma']
+draft: true
+summary: 'Components are elements you can reuse across your designs. They help to create and manage consistent designs across projects. You can create components from any layers or objects you've designed. '
+thumbnail: '/static/images/tutorials/How-to-install-project-laravel.png'
+---
+
+This tutorial for beginner of laravel installation.
+
+![](/static/images/tutorials/How-to-install-project-laravel.png)
+
+Before creating your first Laravel project, you should ensure that your local machine has PHP and Composer installed. If you are developing on macOS, PHP and [Composer](https://getcomposer.org/)  can be installed via [Homebrew](https://brew.sh/). In addition, we recommend [installing Node and NPM](https://nodejs.org/).
+
+
+After you have installed PHP and Composer, you may create a new Laravel project via the Composer` create-project` command:
+
+```
+composer create-project laravel/laravel:^8.* laravel-app
+```
+
+Or, you may create new Laravel projects by globally installing the Laravel installer via Composer:
+
+
+```
+composer global require laravel/installer
+ 
+laravel new example-app
+```
+
+After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI `serve` command:
+
+```
+cd example-app
+ 
+php artisan serve
+```
+
+Once you have started the Artisan development server, your application will be accessible in your web browser at `http://localhost:8000`.
