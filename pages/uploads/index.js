@@ -4,7 +4,7 @@ import { PageSEO } from '@/components/SEO'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Image from 'next/image'
 
-export default function Home() {
+export default function UploadImage() {
   const [imageSrc, setImageSrc] = useState()
   const [uploadData, setUploadData] = useState()
 
@@ -31,7 +31,7 @@ export default function Home() {
       formData.append('upload_preset', 'leatsophat')
     }
 
-    const data = await fetch('https://api.cloudinary.com/v1_1/dcqs4wzvs/image/upload', {
+    const data = await fetch('https://api.cloudinary.com/v1_1/leatsophat/image/upload', {
       method: 'POST',
       body: formData,
     }).then((r) => r.json())
@@ -93,7 +93,6 @@ export default function Home() {
                 </CopyToClipboard>
               </div>
             )}
-            {/* {JSON.stringify(uploadData.secure_url, null, 2)} */}
           </div>
         </form>
       </main>
