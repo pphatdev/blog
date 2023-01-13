@@ -10,7 +10,7 @@ const ContentSecurityPolicy = `
   img-src * blob: data:;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app
+  frame-src giscus.app www.youtube-nocookie.com www.youtube.com youtube.com;
 `
 
 const securityHeaders = [
@@ -43,6 +43,14 @@ const securityHeaders = [
   {
     key: 'Strict-Transport-Security',
     value: 'max-age=31536000; includeSubDomains',
+  },
+  {
+    key: 'Access-Control-Allow-Origin',
+    value: "www.youtube.com",
+  },
+  {
+    key: 'Set-Cookie',
+    value: "SameSite=None; Secure",
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
   {
