@@ -1,0 +1,292 @@
+---
+title: 'Create a search bar Laravel-React from scratch'
+date: 2023-03-04
+lastmod: '2023-03-04'
+tags: ['Laravel-React','Tailwindcss']
+draft: false
+summary: "Create a search bar Laravel-React from scratch. Before we're going create a search item we need to install Laravel-React first."
+thumbnail: 'https://res.cloudinary.com/leatsophat/image/upload/v1677945338/leatsophat/irary1sxwrzu0wjtdctf.png'
+type: blog
+---
+
+![](https://res.cloudinary.com/leatsophat/image/upload/v1677945338/leatsophat/irary1sxwrzu0wjtdctf.png)
+
+<b>Overview:</b>
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={(2, 3)}/>
+
+This tutorial I'll skip some explaination processing of the code.
+
+
+## Create Laravel Project
+
+    Before we're going create a search item we need to install Laravel-React first.
+    Go ahead and initialize a new <a href="/blog/how-to-install-laravel@8.x"> `Laravel 8x` </a> project and `ReactJs` package . 
+    open your terminal than 
+
+```sh
+composer create-project laravel/laravel:^8.* laravel-react-filter
+cd laravel-react-filter
+```
+
+### Install laravel/ui
+    Run this command to install the `laravel/ui` composer package.
+```sh
+composer require laravel/ui
+```
+
+### Install React in Laravel
+    Now that you’ve installed the composer UI package, you’ll run the command below to install React in Laravel.
+```sh
+php artisan ui react
+```
+
+
+### Install Tailwindcss
+    Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both tailwind.config.js and postcss.config.js.
+
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+#### Configure your template paths
+Add the paths to all of your template files in your `tailwind.config.js` file.
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+}
+```
+
+#### Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your `./resources/css/app.css` file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+#### Add Tailwind to your Laravel Mix configuration
+In your `webpack.mix.js` file, add tailwindcss as a PostCSS plugin.
+
+```js
+mix.js("resources/js/app.js", "public/js")
+    .postCss("resources/css/app.css", "public/css", [
+        require("tailwindcss"),
+    ])
+    .react()
+```
+
+
+### Install the Required Packages
+The following command installs all the javascript packages required for our project.
+```sh
+npm install
+```
+
+### Start your Tailwind building process
+```sh
+npm run watch
+```
+
+
+## Initialize data 
+DummyJSON can be used with any type of front end project that needs products, carts, users, todos or any dummy data in JSON format.
+You can use examples below to check how DummyJSON works. <a href="https://dummyjson.com/docs"> Read more</a>
+
+This is the route initialize in the tutorial 
+```s
+https://dummyjson.com/products
+```
+
+also there is sample of data JSON 
+```json 
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "iPhone 9",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "smartphones",
+            "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+            "images": [
+                "https://i.dummyjson.com/data/products/1/1.jpg",
+                "https://i.dummyjson.com/data/products/1/2.jpg",
+                "https://i.dummyjson.com/data/products/1/3.jpg",
+                "https://i.dummyjson.com/data/products/1/4.jpg",
+                "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "iPhone X",
+            "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+            "price": 899,
+            "discountPercentage": 17.94,
+            "rating": 4.44,
+            "stock": 34,
+            "brand": "Apple",
+            "category": "smartphones",
+            "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+            "images": [
+                "https://i.dummyjson.com/data/products/2/1.jpg",
+                "https://i.dummyjson.com/data/products/2/2.jpg",
+                "https://i.dummyjson.com/data/products/2/3.jpg",
+                "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+            ]
+        },
+    ],
+}
+
+```
+## Initialize function
+
+Now go back to initialize function. Let's create Search function file on `resources/js/components/{filename}` and name it what you want.
+
+This is my sample file name
+```sh 
+resources/js/components/Search.js
+```
+#### resources/js/components/Search.js
+```js 
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+
+
+const fetchingData = async () => {
+    
+    return axios.get('https://dummyjson.com/products')
+    .then(({data})=>{
+        return data.products
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+function SearchItem() {
+    const [query, setQuery] = useState("")
+    const [data, setDatas] = useState('')
+
+    useEffect(()=>{
+        fetchingData().then((data)=>{
+            setDatas(data || '');
+        });
+    },[])
+
+    return (
+        <div className="w-full grid grid-cols-2 gap-4 max-w-md mx-auto py-5">
+            <input 
+                className='w-full border col-span-2 rounded-md px-5 p-2 right-2 focus:outline-red-400' 
+                placeholder="Enter Post Title" 
+                onChange={ event => setQuery(event.target.value) } 
+            />
+
+            { 
+                data ? 
+                data.filter(
+                    post => {
+                        if (query === '') {
+                            return post;
+                        } else if (post.title.toLowerCase().includes(query.toLowerCase())) {
+                            return post;
+                        }
+                    }
+                ).map((item, index) => (
+                    <div 
+                        key={index} 
+                        className="col-span-1 group rounded-2xl flex flex-col gap-1 hover:scale-105 relative hover:drop-shadow-xl bg-white p-5 transition-all"
+                    >
+                        <img 
+                            className='h-32 rounded-2xl object-cover w-full' 
+                            src={item?.thumbnail}
+                            alt={item?.title}
+                        />
+
+                        <div className='flex gap-1 items-center'>
+                            <div className='w-full'>
+                                <h1 className='line-clamp-2 leading-5 font-medium'>
+                                    {item?.title}
+                                </h1>
+                                <div className='flex gap-1 items-center'>
+                                    <p className='line-clamp-1 text-[12px] text-slate-500'>
+                                        {item?.brand}
+                                    </p>
+                                    <svg className='w-3 h-3 fill-slate-500 flex-shrink-0' viewBox="0 0 15 16" fill="none">
+                                        <path d="M7.5 14.25C10.9375 14.25 13.75 11.4375 13.75 8C13.75 4.5625 10.9375 1.75 7.5 1.75C4.0625 1.75 1.25 4.5625 1.25 8C1.25 11.4375 4.0625 14.25 7.5 14.25Z" fill="#525252" stroke="#525252" strokeWidth="0.9375" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <path d="M4.84375 7.99998L6.6125 9.76873L10.1562 6.23123" stroke="white" strokeWidth="0.9375" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <img 
+                                className='h-10 border flex-shrink-0 w-10 rounded-full object-cover' 
+                                src={item?.thumbnail}
+                                alt={item?.title}
+                            />
+                        </div>
+                    </div>
+                )) : ''
+            }
+        </div>
+    );
+}
+
+export default SearchItem;
+
+if (document.getElementById('search-item')) {
+    ReactDOM.render(<SearchItem />, document.getElementById('search-item'));
+}
+
+```
+
+#### resources/js/app.js
+
+```js 
+require('./components/SearchItem');
+```
+#### welcome.blade.php 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create a search bar in React from scratch</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
+<body>
+    <div id="search-item"></div>
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>
+```
+
+## Start Serve
+
+```
+php artisan serve
+```
+
+goto <a href="127.0.0.1:8000">127.0.0.1:8000</a> to see your work.
+
+There is your result 
+
+![](https://res.cloudinary.com/leatsophat/image/upload/v1677944493/leatsophat/hnj8eunc9y2vonqtg7me.png)
