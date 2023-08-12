@@ -21,13 +21,16 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        {/* <script async src="https://cdn.splitbee.io/sb.js"></script> */}
       </Head>
+
       {isDevelopment && isSocket && <ClientReload />}
+
       <Analytics />
+
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
+      
     </ThemeProvider>
   )
 }

@@ -8,6 +8,7 @@ module.exports = {
     './layouts/**/*.js',
     './lib/**/*.js',
     './data/**/*.mdx',
+    './data/*.svg',
   ],
   darkMode: 'class',
   theme: {
