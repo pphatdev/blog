@@ -48,9 +48,11 @@ export default function Header() {
             <div className="w-full max-w-7xl mx-auto">
                 <nav className="flex items-center justify-between px-6 lg:px-8 py-3" aria-label="Global">
                     <div className="flex flex-shrink-0 lg:flex-1 sm:w-1/3">
-                        <a href="/" className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white" aria-label={siteMetadata.headerTitle}>
-                            <Logo />
-                        </a>
+                        <Link href="/"  aria-label={siteMetadata.headerTitle}>
+                            <a className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white">
+                                <Logo />
+                            </a>
+                        </Link>
                     </div>
 
                     <div className="hidden lg:flex transition-all justify-center sm:w-1/3 gap-x-2">
@@ -81,9 +83,11 @@ export default function Header() {
                     
                     <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
-                            <a href="/" className="-m-1.5 p-1.5" aria-label={siteMetadata.headerTitle}>
-                                <Logo />
-                            </a>
+                            <Link href="/"  aria-label={siteMetadata.headerTitle}>
+                                <a className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white">
+                                    <Logo />
+                                </a>
+                            </Link>
                             <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)} >
                                 <span className="sr-only">Close menu</span>
                                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
