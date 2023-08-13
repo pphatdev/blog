@@ -24,6 +24,7 @@ export default function Entertainment({ posts, initialDisplayPosts, pagination }
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
+        category={"entertainment"}
         title="All Entertainment"
       />
     </>

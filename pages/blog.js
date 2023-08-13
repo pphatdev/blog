@@ -24,6 +24,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
+        category={'blog'}
         title="All Posts"
       />
     </>

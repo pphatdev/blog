@@ -1,52 +1,19 @@
 import Link from "next/link";
 import ThemeSwitch from "./ThemeSwitch";
-import MobileNav from "./MobileNav";
 import siteMetadata from "@/data/siteMetadata";
 import Logo from './logo.svg'
 import headerNavLinks from "@/data/headerNavLinks";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from 'react'
 import { Dialog } from "@headlessui/react";
+import Border from "./Border";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
-        // <header className="bg-white/50 dark:bg-black/50 border-b dark:border-white/10 backdrop-blur-sm fixed w-full">
-        //      <div className="w-full max-w-7xl mx-auto">
-        //          <nav className="flex items-center px-5 justify-between">
-        //              <div className="flex-shrink-0">
-        //                  <Link href="/" aria-label={siteMetadata.headerTitle}>
-        //                      <a className="dark:[&>svg>g]:fill-white"> <Logo /> </a>
-        //                  </Link>
-        //              </div>
-        //              <ul className="hidden sm:flex gap-1 items-center transition-colors">
-        //                  {
-        //                      headerNavLinks.map(
-        //                          (link, i) => (
-        //                              <li 
-        //                                  key={i} 
-        //                                  className="[&>a]:text-slate-800 dark:[&>a]:text-slate-100 [&>a]:font-medium border-b border-transparent hover:border-primary-500 hover:[&>a]:text-primary-500 [&>a]:px-3 py-1 rounded-lg"
-        //                              >
-        //                                  <Link
-        //                                      key={link.title}
-        //                                      href={link.href}
-        //                                  >
-        //                                      {link.title}
-        //                                  </Link>
-        //                              </li>
-        //                          )
-        //                      )
-        //                  }
-        //                  <ThemeSwitch />
-        //              </ul>
-        //              <MobileNav />
-        //          </nav>
-        //      </div>
-        // </header>
-
-        <header className="absolute inset-x-0 top-0 z-50">
+        <header className="absolute inset-x-0 top-0 z-50 border-b dark:border-white/10">
             <div className="w-full max-w-7xl mx-auto">
-                <nav className="flex items-center justify-between px-6 lg:px-8 py-3" aria-label="Global">
+                <nav className="flex items-center justify-between px-6 lg:px-8 sm:py-3" aria-label="Global">
                     <div className="flex flex-shrink-0 lg:flex-1 sm:w-1/3">
                         <Link href="/"  aria-label={siteMetadata.headerTitle}>
                             <a className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white">
@@ -60,9 +27,10 @@ export default function Header() {
                             <a 
                                 key={i} 
                                 href={item.href} 
-                                className="text-sm whitespace-nowrap bg-white/5 ring-black/10 font-semibold py-1 ring-1 dark:ring-white/10 px-4 dark:bg-white/5 backdrop-blur-sm rounded-md dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/50 leading-6 text-gray-900"
+                                className="text-sm group relative whitespace-nowrap bg-white/5 ring-black/10 font-semibold py-1 ring-1 dark:ring-white/10 px-4 dark:bg-white/5 backdrop-blur-sm rounded-md dark:hover:bg-white/10 dark:text-slate-100 hover:bg-white/50 leading-6 text-gray-900"
                             >
                                 {item.title}
+                                <Border className={'hidden group-hover:flex translate-y-[14px]'}/>
                             </a>
                         ))}
                     </div>

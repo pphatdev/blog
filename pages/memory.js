@@ -24,6 +24,7 @@ export default function Memory({ posts, initialDisplayPosts, pagination }) {
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
+        category={"memory"}
         title="All Memories"
       />
     </>

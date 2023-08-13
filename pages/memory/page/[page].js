@@ -49,6 +49,7 @@ export default function PostPage({ posts, initialDisplayPosts, pagination }) {
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
+        category={"memory"}
         title="All Memories"
       />
     </>
