@@ -12,7 +12,7 @@ export default function ContentCard({ posts, category, slug, className , max}) {
                     posts.slice(0, max).map( (item ,i) => 
                         {
                             return (
-                                <a key={i} href={`/${slug??''}/${item?.slug}`} className="hover:bg-white/90 backdrop-blur-sm dark:bg-slate-800 hover:drop-shadow-xl sm:p-3 rounded-xl dark:hover:bg-slate-800">
+                                <a key={i} href={`/${slug??''}/${item?.slug}`} className="hover:bg-white/90 backdrop-blur-sm hover:drop-shadow-xl sm:p-3 rounded-xl dark:hover:bg-slate-800">
                                     <date className="flex items-center gap-1 sm:gap-3 font-medium text-primary-500"> 
                                         <div className="flex items-center text-xs sm:textsm flex-shrink-0 gap-3"><span className="hidden sm:block">•</span> {formatDate(item.lastmod)}</div> 
                                         <div className="order-first w-full h-px -translate-x-5 sm:translate-x-0 bg-gradient-to-r sm:order-last from-primary-500 to-purple-600"></div>
