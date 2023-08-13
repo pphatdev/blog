@@ -7,6 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from 'react'
 import { Dialog } from "@headlessui/react";
 import Border from "./Border";
+import Image from "next/image";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,9 +16,9 @@ export default function Header() {
             <div className="w-full max-w-7xl mx-auto">
                 <nav className="flex items-center justify-between px-6 lg:px-8 sm:py-3" aria-label="Global">
                     <div className="flex flex-shrink-0 lg:flex-1 sm:w-1/3">
-                        <Link href="/"  aria-label={siteMetadata.headerTitle}>
-                            <a className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white">
-                                <Logo />
+                        <Link href="/">
+                            <a className="-m-1.5 p-1.5 dark:[&>svg>g]:fill-white" aria-label={siteMetadata.headerTitle}>
+                                <Image src={Logo} alt={siteMetadata.headerTitle} />
                             </a>
                         </Link>
                     </div>
