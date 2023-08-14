@@ -1,9 +1,6 @@
 import ContentCard from '@/components/ContentCard'
-import Example from '@/components/Example'
 import Hero from '@/components/Hero'
-import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
-import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
