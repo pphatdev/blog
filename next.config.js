@@ -50,7 +50,7 @@ const securityHeaders = [
   },
   {
     key: 'Set-Cookie',
-    value: "SameSite=None; Secure",
+    value: "SameSite=Lax; Secure",
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
   {
