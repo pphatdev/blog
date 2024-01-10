@@ -1,0 +1,74 @@
+---
+title: 'Say Good bye to 2023'
+date: 2022-12-31T15:32:14Z
+lastmod: '2022-07-25'
+tags: ['Admin', 'TurboTech']
+draft: false
+summary: 'កម្រងរូបភាពអនុស្សាវរីយ៍ក្នុងឆ្នាំចាស់'
+thumbnail: '/static/images/2022/11.jpg?w=750&q=75'
+type: memory
+imagepost: [
+    {
+        id: 1,
+        title: 'Thy Thary and Kol Heang',
+        img: '/static/images/2022/1.jpg',
+    },
+    {
+        id: 2,
+        title: 'Developer Team',
+        img: '/static/images/2022/2.jpg',
+    },
+    {
+        id: 3,
+        title: 'Developer Team',
+        img: '/static/images/2022/3.jpg',
+    },
+    {
+        id: 4,
+        title: 'Nam Kopy, Leat Sophat, Soy Sreysor, Sokhom Sokdanin, Mean Navy, Kor Sokha',
+        img: '/static/images/2022/4.jpg',
+    },
+    {
+        id: 5,
+        title: 'Developer Team',
+        img: '/static/images/2022/5.jpg',
+    },
+    {
+        id: 6,
+        title: 'Team Sdach C',
+        img: '/static/images/2022/6.jpg',
+    },
+    {
+        id: 7,
+        title: 'Developer Team',
+        img: '/static/images/2022/7.jpg',
+    },
+    {
+        id: 8,
+        title: 'Team Developer, Team NOC, Team Finance',
+        img: '/static/images/2022/8.jpg',
+    },
+    {
+        id: 9,
+        title: 'Team Support, Team Developer',
+        img: '/static/images/2022/9.jpg',
+    },
+    {
+        id: 10,
+        title: 'Team Developer, Team NOC, Team Finance',
+        img: '/static/images/2022/10.jpg',
+    },
+    {
+        id: 11,
+        title: 'Developer Team',
+        img: '/static/images/2022/11.jpg',
+    },
+    {
+        id: 12,
+        title: 'TurboTech Family',
+        img: '/static/images/2022/12.jpg',
+    },
+]
+---
+កម្រងរូបភាពអនុស្សាវរីយ៍ក្នុងឆ្នាំ២០២២​
+<Goodbye2022/>
